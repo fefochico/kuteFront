@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row padding">
+        <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-md-4 offset-md-4">
+            <div class="form-container">
+                <div class="form-group centered">
+                    <div class="title">kutefy</div>
+                </div>
+                <form class="form" [formGroup]="userForm">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">
+                                    <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                    </svg>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="username" formControlName="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                            </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group" style="margin-bottom: 5px !important;">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.8em" height="0.8em"  x="0px" y="0px"
+                                      viewBox="0 0 512 512" fill="currentColor" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <g>
+                                      <g>
+                                        <path d="M490.067,120.936l-99.002-99.002c-29.244-29.245-76.829-29.245-106.073,0l-95.466,95.466l205.075,205.075l95.467-95.467
+                                          C519.312,197.765,519.312,150.181,490.067,120.936z M405.422,206.586L305.415,106.58l21.214-21.214l100.007,100.007
+                                          L405.422,206.586z"/>
+                                      </g>
+                                    </g>
+                                    <g>
+                                      <g>
+                                        <polygon points="268.454,238.759 98.114,409.1 76.899,387.886 247.24,217.544 210.844,181.148 0,391.992 0,512 120.008,512 
+                                          120.008,451.996 180.012,451.996 180.012,391.992 240.016,391.992 240.016,331.988 300.021,331.988 330.853,301.156 		"/>
+                                      </g>
+                                    </g>
+                                    </svg>
+                                  </span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" formControlName="password" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
+                      </div>
+                      <div class="error-container">
+                        <div class="error" *ngIf="(isSubmitted && userForm.invalid) || error">
+                          El usuario o contraseña no son correctos
+                        </div>
+                      </div>
+                      <div class="col-md-12 centered">
+                            <button type="button" class="btn btn-primary btn-sm custom-btn" (click)="send()">Entrar</button>
+                      </div>
+                      <div class="col-md-12 centered padding">
+                        <a href="#" class="link">Recuperar contraseña</a>
+                      </div>
+                      <div class="col-md-12 centered padding-more">
+                        <label class="legal">
+                          Al usar esta plataforma aceptas nuestras<br>
+                          <a href="#" class="legal bold">Condiciones de uso</a> y <a href="#" class="legal bold">Política de privacidad</a>
+                        </label>
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

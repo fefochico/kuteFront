@@ -1,0 +1,15 @@
+<div class="container" style="margin-bottom: 100px !important;">
+    <div class="row" *ngIf="list">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-5">
+        <div class="seccion">
+            <app-activitylist [activity]="list" (refresh)="onChangeData($event)"></app-activitylist>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-7">
+        <div class="seccion">
+            <app-servicelist [activity]="list" (refresh)="onChangeData($event)"></app-servicelist>
+        </div>
+      </div>
+    </div>
+</div>
+

@@ -1,0 +1,110 @@
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+
+.form-control:focus{
+    outline: none !important;
+}
+
+.container-fluid{
+    background: #00BCD4;
+    height: 100vh;
+}
+
+.seccion{
+    padding:25px;
+    margin-top: 20px; 
+    background-color: white; 
+    border-radius: 4px; 
+    border-color:white;
+    border-style: solid; 
+    border-width: 1px;
+}
+
+.title{
+    font-family: 'Satisfy';
+    font-size: 3em;
+    color: white;
+}
+
+.centered{
+    text-align: center;
+}
+
+.form-container{
+    margin-top: calc(50vh - 190px);
+}   
+
+.form{
+    border-radius: 10px;
+    border: 0.1em solid white;
+    padding: 25px;
+    background: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.2);
+}
+
+.btn-primary{
+    width: 100%;
+}
+
+.centered{
+    text-align: center;
+}
+
+.custom-btn{
+    width: 70%;
+    background-color: #00a5bb;
+    border-radius: 10px;
+    border: 1px solid #00a5bb;
+    color: white;
+    height: 35px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.link{
+    color: #495057 !important;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.padding{
+    padding-top: 5px;
+}
+
+.padding-more{
+    padding-top: 10px;
+}
+.bold{
+    font-weight: 600 !important;
+}
+.legal{
+    font-weight: 200;
+    color: lightslategrey;
+    font-size: 10px;
+}
+
+.error-container{
+    min-height: 24px;
+    width: 100%;
+    text-align: center;
+}
+.error{
+    color: darkred;
+}

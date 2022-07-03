@@ -1,0 +1,28 @@
+textarea {
+    resize: none;
+}
+
+label{
+    margin-bottom: 0px !important;
+}
+
+.form-group{
+    padding: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.text-right{
+    padding-top: 15px;
+    text-align: right;
+}
+
+.form{
+    padding:25px;
+    margin-top: 20px; 
+    background-color: white; 
+    border-radius: 4px; 
+    border-color:#cfd7e6;
+    border-style: solid; 
+    border-width: 1px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.2);
+}

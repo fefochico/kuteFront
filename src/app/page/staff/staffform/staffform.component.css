@@ -1,0 +1,51 @@
+textarea {
+    resize: none;
+}
+
+label{
+    margin-bottom: 0px !important;
+}
+
+
+
+::ng-deep .multiselect-dropdown .dropdown-btn {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    padding: 4px 12px !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    border: 1px solid #ced4da !important;
+    border-radius: .25rem !important;
+}
+
+::ng-deep .dropdown-list{
+    font-size: .875rem !important;
+}
+
+::ng-deep  .dropdown-down{
+    scale:0.6 !important;
+}
+
+::ng-deep  .dropdown-up{
+    scale:0.6 !important;
+}
+
+::ng-deep  .selected-item{
+    font-size: .670rem !important;
+    margin-top: 3px !important;
+    background: grey !important;
+    border: 1px solid grey !important;
+}
+
+
+.form-group{
+    padding: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.text-right{
+    padding-top: 15px;
+    text-align: right;
+}

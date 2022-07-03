@@ -1,0 +1,43 @@
+textarea {
+    resize: none;
+}
+
+label{
+    margin-bottom: 0px !important;
+}
+
+.form-group{
+    padding: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.modal-footer{
+    border-top: 0px !important;
+}
+
+.modal-header{
+    border-bottom: 0px !important;
+}
+
+.visible{
+    display: block !important;
+    background: rgba(0,0,0,0.5);
+}
+
+.form-value{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    line-height: 18px;
+}
+
+.modal-body{
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.custom-label{
+    font-weight: bold;
+    line-height: 18px;
+}

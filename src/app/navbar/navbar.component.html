@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-green">
+    <a href="#" class="navbar-brand">kutefy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" [routerLink]="['/home/shop']" (click)="closeCollapseNavbar()">Tienda</a>
+            <a class="nav-item nav-link" [routerLink]="['/home/activity']" (click)="closeCollapseNavbar()">Actividad</a>
+            <a class="nav-item nav-link" [routerLink]="['/home/shift']" (click)="closeCollapseNavbar()">Turnos</a>
+            <a class="nav-item nav-link" [routerLink]="['/home/staff']" (click)="closeCollapseNavbar()">Personal</a>
+            <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar()">Reservas</a>
+            <a class="nav-item nav-link" [routerLink]="['/home/booking']" href="#" (click)="closeCollapseNavbar()">Perfil</a>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav2">
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+          <li class="nav-item nav-icon">
+              <a class="p-2">
+                <svg class="bi bi-bell-fill" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 16a2 2 0 002-2H6a2 2 0 002 2zm.995-14.901a1 1 0 10-1.99 0A5.002 5.002 0 003 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                </svg>
+              </a>
+          </li>
+          <li class="nav-item nav-icon" style="width: 160px;">
+              <div class="dropdown" style="text-align: center; cursor: pointer;">
+                <a data-toggle="dropdown" class="p-2">
+                    <svg class="bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
+                      </svg>
+                  </a>
+                  <div class="dropdown-menu dropdown.menu-right">
+                      <a class="dropdown-item" style="font-size: 14px !important;" (click)="logout()">Cerrar sesión</a>
+                  </div>
+              </div>
+          </li>
+
+          
+        </ul>
+    </div>
+</nav>

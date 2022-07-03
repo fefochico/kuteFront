@@ -1,0 +1,53 @@
+<div class="container-fluid" style="margin-bottom: 100px !important;">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="form">
+            <div class="seccion">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <h5>Reservas</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <input class="form-control form-control-sm" name="mydate" placeholder="Seleccione una fecha" 
+                            angular-mydatepicker #dp="angular-mydatepicker" 
+                            [(ngModel)]="model" [options]="myDpOptions"
+                            (dateChanged)="onDateChanged($event)" (click)="dp.toggleCalendar()"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                        <select id="activity" class="form-control form-control-sm select-dispo" [(ngModel)]="filtersValues.keyactivity" (ngModelChange)="selected('keyactivity')">
+                            <option value="null">-- Actividad --</option>
+                            <option *ngFor="let a of activities" value="{{a.key}}">{{a.name}}</option>
+                          </select>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3" *ngIf="personal && personal.length>0">
+                        <select id="personal" class="form-control form-control-sm select-dispo" [disabled]="filtersValues.keyactivity==null || personal.length==0"  [(ngModel)]="filtersValues.keystaff" (ngModelChange)="selected('keystaff')">
+                            <option value="null">-- Personal --</option>
+                            <option *ngFor="let p of personal" value="{{p.key}}">{{p.name}}</option>
+                          </select>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3" *ngIf="services && services.length>0">
+                        <select id="service" class="form-control form-control-sm select-dispo" [disabled]="filtersValues.keyactivity==null || services.length==0" [(ngModel)]="filtersValues.keyservice" (ngModelChange)="selected('keyservice')">
+                            <option value="null">-- Servicio --</option>
+                            <option *ngFor="let s of services" value="{{s.key}}">{{s.name}}</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+            <!--<ng-container *ngIf="true==false">-->
+            <ng-container *ngIf="times && times.length>0">
+                <app-schedule [filtersValues]="filtersValues" [bookings]="bookings" [weekDays]="weekDays" [times]="times" (evtClose)="getBookings()"></app-schedule>
+            </ng-container>
+            <!--</ng-container>
+            <ng-container *ngIf="true==true">
+                <app-schedule [filtersValues]="filtersValues" [bookings]="bookings" [weekDays]="[weekDays[0]]" [times]="times" (evtClose)="getBookings()"></app-schedule>
+            </ng-container>-->
+          </div>
+      </div>
+    </div>
+</div>

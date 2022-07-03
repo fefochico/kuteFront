@@ -1,0 +1,17 @@
+textarea {
+    resize: none;
+}
+
+label{
+    margin-bottom: 0px !important;
+}
+
+.form-group{
+    padding: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.text-right{
+    padding-top: 15px;
+    text-align: right;
+}

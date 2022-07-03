@@ -1,0 +1,78 @@
+<div class="row" *ngIf="weekDays.length>0 && bookings.length>0">
+  <div class="col-12 big-calendar">
+        <table class="custom-table" width="100%">
+            <thead>
+              <tr>
+                <th>
+                  Hora
+                </th>
+                <th *ngFor="let d of days" style="text-align: center">
+                  {{d.name}}
+                </th>
+              </tr>
+              <tr>
+                  <th></th>
+                  <ng-container *ngFor="let w of weekDays">
+                    <th  style="text-align: center">
+                        <div style="width: 100%;" [ngClass]="[w.selected?'selectedDate':'']">{{w.day+'/'+w.month+'/'+w.year}}</div>
+                    </th>
+                  </ng-container>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of times; let i=index">
+                    <td style="width: 100px;">
+                        {{times[i].name}}
+                    </td>
+                    <!--<ng-container *ngFor="let w of weekDays; let j=index" >
+                        <td *ngIf="isThisPosition(bookings[j][i], w, t.id)" [className]="'cell ' +  bookings[j][i].status" (click)="editBooking(j,i)" (mouseover)="onMouseOver(j,i,true)" (mouseout)="onMouseOver(j,i, false)">
+                          <div *ngIf="bookings[j][i].visible">{{bookings[j][i].activity}} {{bookings[j][i].service}}</div>
+                        </td>
+                    </ng-container>-->
+                    <ng-container *ngFor="let w of weekDays; let j=index" >
+                      <td [className]="'cell ' + bookings[j][i].enabled + ' ' + bookings[j][i].status" (click)="editBooking(j,i)" (mouseover)="onMouseOver(j,i,true)" (mouseout)="onMouseOver(j,i, false)">
+                        <div *ngIf="bookings[j][i].visible">{{bookings[j][i].activity}} {{bookings[j][i].service}}</div>
+                      </td>
+                    </ng-container>
+                </tr>  
+            </tbody>
+        </table>
+  </div>
+  <div class="col-12 small-calendar">
+    <table class="custom-table" width="100%">
+      <thead>
+        <tr>
+          <th>
+            Hora
+          </th>
+          <th style="text-align: center">
+            {{getDay()}}
+          </th>
+        </tr>
+        <tr>
+            <th></th>
+            <ng-container *ngFor="let w of weekDays">
+              <th  style="text-align: center" *ngIf="w.selected" >
+                  <div style="width: 100%;" [ngClass]="[w.selected?'selectedDate':'']">{{w.day+'/'+w.month+'/'+w.year}}</div>
+              </th>
+            </ng-container>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let t of times; let i=index">
+              <td style="width: 50px !important;">
+                  {{times[i].name}}
+              </td>
+              <ng-container *ngFor="let w of weekDays; let j=index" >
+                  <td *ngIf="w.selected" [className]="'cell-small ' + bookings[j][i].enabled + ' ' + bookings[j][i].status" (click)="editBooking(j,i)" (mouseover)="onMouseOver(j,i,true)" (mouseout)="onMouseOver(j,i, false)">
+                    <div *ngIf="bookings[j][i].visible">{{bookings[j][i].activity}} {{bookings[j][i].service}}</div>
+                  </td>
+              </ng-container>
+          </tr>  
+      </tbody>
+  </table>
+  </div>
+</div>
+<ng-container *ngIf="selectedAvailability">
+  <app-scheduleform [filtersValues]="filtersValues" [showModal]="showModal" [availability]="selectedAvailability" (evtClose)="closeModal($event)"></app-scheduleform>
+</ng-container>

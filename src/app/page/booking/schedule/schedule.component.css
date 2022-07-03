@@ -1,0 +1,74 @@
+.cell{
+    height: 35px;
+    background: lightgray;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    width: calc(100% /7);
+    cursor: pointer;
+}
+
+.cell-small{
+    height: 35px;
+    background: lightgray;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    width: 80%;
+    cursor: pointer;
+}
+
+.withoutBorderTop{
+    border-top: 0px;
+}
+
+.busy{
+    background: green !important;
+    color: white;
+    font-size: small;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.cell:hover{
+    cursor: pointer;
+}
+
+.selectedDate{
+    border: 2px solid salmon;
+    border-radius: 5px;
+}
+
+.mouseOver-availability{
+    background: cornflowerblue;
+}
+  
+.mouseOver-busy{
+    background: darkgreen !important;
+    color: white !important;
+}
+.small-calendar{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .big-calendar{
+        display: none;
+    }
+    .small-calendar{
+        display: block !important;
+    }
+}
+
+.first{
+    border-radius: 5px 5px 0px 0px;
+}
+
+.last{
+    border-radius: 0px 0px 5px 5px;
+}
+
+.disabled{
+    background: black !important;
+    cursor: not-allowed !important;
+}

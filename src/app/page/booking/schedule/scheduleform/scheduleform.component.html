@@ -1,0 +1,68 @@
+<div class="bd-example bd-example-modal">
+<div class="modal" id="bookingModal" tabindex="-1" role="dialog" [ngClass]="{'visible': showModal}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" *ngIf="visible">
+        <div class="modal-header">
+          <h6 class="modal-title" id="bookingModalLabel">
+            <ng-container *ngIf="this.selectedAvailability && this.selectedAvailability.id!=-1">Eliminar reserva</ng-container>
+            <ng-container *ngIf="this.selectedAvailability && this.selectedAvailability.id==-1">Nueva reserva</ng-container>
+          </h6>
+          <button type="button" class="close" (click)="close(false)" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <ng-container *ngIf="dataForm">
+          <div [formGroup]="dataForm"  class="modal-body">
+            <div class="row" *ngIf="selectedAvailability">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="date" class="col-form-label-sm custom-label">Fecha:</label><br>
+                  <div class="form-value">
+                    {{selectedAvailability.date}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="time" class="col-form-label-sm custom-label">Hora:</label><br>
+                  <div class="form-value">
+                    {{selectedAvailability.time}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                    <label for="service" class="col-form-label-sm custom-label">Servicio:</label><br>
+                    <div class="form-value">
+                      {{getName('service')}}
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                    <label for="client" class="col-form-label-sm custom-label">Cliente:</label><br>
+                    <ng-container *ngIf="this.selectedAvailability.id!=-1"><div class="form-value">{{selectedAvailability.client}}</div></ng-container>
+                    <ng-container *ngIf="this.selectedAvailability.id==-1">
+                      <input type="text" class="form-control form-control-sm" id="client" name="client" formControlName="client">
+                    </ng-container>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                    <label for="observation" class="col-form-label-sm custom-label">Observaciones:</label><br>
+                    <ng-container *ngIf="this.selectedAvailability.id!=-1"><div class="form-value">{{selectedAvailability.observation}}</div></ng-container>
+                    <ng-container *ngIf="this.selectedAvailability.id==-1"><textarea class="form-control form-control-sm" id="observation" name="observation" formControlName="observation" rows="3"></textarea></ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" (click)="close(false)">Cerrar</button>
+          <button *ngIf="selectedAvailability && selectedAvailability.id==-1" type="button" class="btn btn-primary btn-sm" (click)="addBooking()">Confirmar</button>
+          <button *ngIf=" selectedAvailability && selectedAvailability.id!=-1" type="button" class="btn btn-primary btn-sm" (click)="removeBooking(this.selectedAvailability.id)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

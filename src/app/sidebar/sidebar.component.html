@@ -1,0 +1,55 @@
+<nav id="sidebar">
+    <ul class="list-unstyled components">
+        <li [class.active]="selectedIndex === 1" 
+        (click)="setIndex(1)">
+            <a [routerLink]="['/home/shop']" >
+                <svg class="bi bi-house-fill" width="100%" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 011.414 0l6.647 6.646a.5.5 0 01-.708.708L8 2.207 1.354 8.854a.5.5 0 11-.708-.708L7.293 1.5z" clip-rule="evenodd"/>
+                </svg>
+                Tienda
+            </a>
+        </li>
+        <li [class.active]="selectedIndex === 2" 
+        (click)="setIndex(2)">
+            <a [routerLink]="['/home/activity']">
+                <svg class="bi bi-bag-fill" width="100%" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 4h14v10a2 2 0 01-2 2H3a2 2 0 01-2-2V4zm7-2.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
+                </svg>
+                Actividad
+            </a>
+        </li>
+        <li [class.active]="selectedIndex === 3" 
+        (click)="setIndex(3)">
+            <a [routerLink]="['/home/shift']">
+                <svg class="bi bi-clock" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm8-7A8 8 0 110 8a8 8 0 0116 0z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M7.5 3a.5.5 0 01.5.5v5.21l3.248 1.856a.5.5 0 01-.496.868l-3.5-2A.5.5 0 017 9V3.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                </svg>
+                Turnos
+            </a>
+        </li>        
+        <li [class.active]="selectedIndex === 4" 
+        (click)="setIndex(4)">
+            <a [routerLink]="['/home/staff']">
+                <svg class="bi bi-people-fill" width="100%" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 100-6 3 3 0 000 6zm-5.784 6A2.238 2.238 0 015 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 005 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/>
+                </svg>
+                Personal
+            </a>
+        </li>
+        <li [class.active]="selectedIndex === 5" 
+        (click)="setIndex(5)">
+            <a [routerLink]="['/home/booking']">
+                <svg class="bi bi-table" width="100%" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M15 4H1V3h14v1z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M5 15.5v-14h1v14H5zm5 0v-14h1v14h-1z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M15 8H1V7h14v1zm0 4H1v-1h14v1z" clip-rule="evenodd"/>
+                    <path d="M0 2a2 2 0 012-2h12a2 2 0 012 2v2H0V2z"/>
+                  </svg>
+                Reservas
+            </a>
+        </li>
+    </ul>
+</nav>

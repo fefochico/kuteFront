@@ -1,0 +1,56 @@
+<!-- Modal -->
+<div class="modal fade" id="addShift" tabindex="-1" role="dialog" aria-labelledby="addShift" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{actionTitle}} turno</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-12" *ngIf="dataForm">
+                <form [formGroup]="dataForm" *ngIf="visible">
+                      <div class="form-group">
+                          <label for="name" class="col-form-label-sm">Nombre</label>
+                          <input type="text" class="form-control form-control-sm" id="name" name="name" formControlName="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="idstarttime" class="col-form-label-sm">Hora de inicio</label>
+                        <select class="form-control form-control-sm" id="idstarttime" name="idstarttime" formControlName="idstarttime">
+                          <option value="null">Seleccione una hora</option>
+                          <option *ngFor="let time of times" value="{{time.id}}">{{time.name}}</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="idendtime" class="col-form-label-sm">Hora de fin</label>
+                        <select class="form-control form-control-sm" id="idendtime" name="idendtime" formControlName="idendtime">
+                          <option value="null">Seleccione una hora</option>
+                          <ng-container *ngFor="let time of times" >
+                            <option *ngIf="this.dataForm.controls['idstarttime'].value==null || time.id>this.dataForm.controls['idstarttime'].value" value="{{time.id}}">{{time.name}}</option>
+                          </ng-container>
+                        </select>
+                      </div>
+                      <div class="form-group" *ngIf="days">
+                          <label class="col-form-label-sm">Dias</label>
+                          <ng-multiselect-dropdown
+                            [settings]="dropdownSettings"
+                            [placeholder]="'Selecciones los dias de la semana'"
+                            [data]="days"
+                            [(ngModel)]="selecteddays"
+                            (onSelect)="onItemSelect($event)"
+                            (onSelectAll)="onSelectAll($event)"
+                            [ngModelOptions]="{standalone: true}">
+                          </ng-multiselect-dropdown>
+                      </div>
+                      <div class="text-right">
+                          <button type="button" class="btn btn-primary btn-sm" (click)="saveInfoShift()" [disabled]="saving">{{actionTitle}}</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

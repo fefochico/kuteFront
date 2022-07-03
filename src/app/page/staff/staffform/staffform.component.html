@@ -1,0 +1,67 @@
+<!-- Modal -->
+<div class="modal fade" id="addStaff" tabindex="-1" role="dialog" aria-labelledby="addShift" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{actionTitle}} personal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <form [formGroup]="dataForm" *ngIf="visible">
+                <div class="form-group">
+                  <label for="name" class="col-form-label-sm">Nombre</label>
+                  <input type="text" class="form-control form-control-sm" id="name" name="name" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-form-label-sm">Apellidos</label>
+                    <input type="text" class="form-control form-control-sm" id="surname" name="surname" formControlName="surname">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-form-label-sm">Teléfono</label>
+                    <input type="text" class="form-control form-control-sm" id="phone" name="phone" formControlName="phone">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-form-label-sm">Email</label>
+                    <input type="text" class="form-control form-control-sm" id="email" name="email" formControlName="email">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label-sm">Actividad</label>
+                  <ng-multiselect-dropdown
+                    [settings]="dropdownSettings"
+                    [placeholder]="'Selecciones actividades'"
+                    [data]="activities"
+                    [(ngModel)]="selectedactivity"
+                    (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)"
+                    [ngModelOptions]="{standalone: true}">
+                  </ng-multiselect-dropdown>
+                </div>
+
+                <div class="form-group">
+                    <label for="selectedshift" class="col-form-label-sm">Turno</label>
+                    <ng-multiselect-dropdown
+                      id="shift"
+                      name="shift"
+                      [settings]="dropdownSettings"
+                      [placeholder]="'Selecciones los turnos'"
+                      [data]="shifts"
+                      [(ngModel)]="selectedshift"
+                      (onSelect)="onItemSelect($event)"
+                      (onSelectAll)="onSelectAll($event)"
+                      [ngModelOptions]="{standalone: true}">
+                    </ng-multiselect-dropdown>
+                </div>
+                <div class="text-right">
+                  <button type="button" class="btn btn-primary btn-sm" (click)="saveInfoStaff()" [disabled]="saving">{{actionTitle}}</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
